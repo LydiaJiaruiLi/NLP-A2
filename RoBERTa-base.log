@@ -1,0 +1,151 @@
+(base) PS C:\Users\leimi\Desktop\XR\cuad> python train.py --output_dir ./train_models/roberta-base --model_type roberta --model_name_or_path ./train_models/roberta-base --train_file ./data/train_separate_questions.json --predict_file ./data/test.json --do_eval --version_2_with_negative --learning_rate 1e-4 --num_train_epochs 4 --per_gpu_eval_batch_size=16  --per_gpu_train_batch_size=16 --max_seq_length 512 --max_answer_length 256 --doc_stride 256 --save_steps 1000 --n_best_size 20 --overwrite_output_dir
+11/26/2022 01:32:56 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+[INFO|configuration_utils.py:652] 2022-11-26 01:32:56,167 >> loading configuration file ./train_models/roberta-base\config.json
+[INFO|configuration_utils.py:706] 2022-11-26 01:32:56,168 >> Model config RobertaConfig {
+  "_name_or_path": "./train_models/roberta-base",
+  "architectures": [
+    "RobertaForQuestionAnswering"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.24.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|configuration_utils.py:652] 2022-11-26 01:32:56,172 >> loading configuration file ./train_models/roberta-base\config.json
+[INFO|configuration_utils.py:706] 2022-11-26 01:32:56,173 >> Model config RobertaConfig {
+  "_name_or_path": "./train_models/roberta-base",
+  "architectures": [
+    "RobertaForQuestionAnswering"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.24.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|tokenization_utils_base.py:1773] 2022-11-26 01:32:56,181 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:1773] 2022-11-26 01:32:56,181 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:1773] 2022-11-26 01:32:56,181 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1773] 2022-11-26 01:32:56,182 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1773] 2022-11-26 01:32:56,182 >> loading file tokenizer_config.json
+[INFO|configuration_utils.py:652] 2022-11-26 01:32:56,183 >> loading configuration file ./train_models/roberta-base\config.json
+[INFO|configuration_utils.py:706] 2022-11-26 01:32:56,183 >> Model config RobertaConfig {
+  "_name_or_path": "./train_models/roberta-base",
+  "architectures": [
+    "RobertaForQuestionAnswering"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.24.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|modeling_utils.py:2155] 2022-11-26 01:32:56,280 >> loading weights file ./train_models/roberta-base\pytorch_model.bin
+[INFO|modeling_utils.py:2608] 2022-11-26 01:32:57,138 >> All model checkpoint weights were used when initializing RobertaForQuestionAnswering.
+
+[INFO|modeling_utils.py:2616] 2022-11-26 01:32:57,138 >> All the weights of RobertaForQuestionAnswering were initialized from the model checkpoint at ./train_models/roberta-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use RobertaForQuestionAnswering for predictions without further training.
+11/26/2022 01:32:58 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir=None, data_process_batch=2000, device=device(type='cuda'), do_eval=True, do_lower_case=False, do_train=False, doc_stride=256, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, keep_frac=1.0, lang_id=0, learning_rate=0.0001, local_rank=-1, logging_steps=500, max_answer_length=256, max_grad_norm=1.0, max_query_length=64, max_seq_length=512, max_steps=-1, model_name_or_path='./train_models/roberta-base', model_type='roberta', n_best_size=20, n_gpu=1, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=4.0, output_dir='./train_models/roberta-base', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=16, per_gpu_train_batch_size=16, predict_file='./data/test.json', save_steps=1000, seed=42, server_ip='', server_port='', threads=4, tokenizer_name='', train_file='./data/train_separate_questions.json', verbose_logging=False, version_2_with_negative=True, warmup_steps=0, weight_decay=0.0)
+11/26/2022 01:32:58 - INFO - __main__ -   Loading checkpoint ./train_models/roberta-base for evaluation
+11/26/2022 01:32:58 - INFO - __main__ -   Evaluate the following checkpoints: ['./train_models/roberta-base']
+[INFO|configuration_utils.py:652] 2022-11-26 01:32:58,083 >> loading configuration file ./train_models/roberta-base\config.json
+[INFO|configuration_utils.py:706] 2022-11-26 01:32:58,083 >> Model config RobertaConfig {
+  "_name_or_path": "./train_models/roberta-base",
+  "architectures": [
+    "RobertaForQuestionAnswering"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": 0,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-05,
+  "max_position_embeddings": 514,
+  "model_type": "roberta",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 1,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.24.0",
+  "type_vocab_size": 1,
+  "use_cache": true,
+  "vocab_size": 50265
+}
+
+[INFO|modeling_utils.py:2155] 2022-11-26 01:32:58,085 >> loading weights file ./train_models/roberta-base\pytorch_model.bin
+[INFO|modeling_utils.py:2608] 2022-11-26 01:32:58,670 >> All model checkpoint weights were used when initializing RobertaForQuestionAnswering.
+
+[INFO|modeling_utils.py:2616] 2022-11-26 01:32:58,670 >> All the weights of RobertaForQuestionAnswering were initialized from the model checkpoint at ./train_models/roberta-base.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use RobertaForQuestionAnswering for predictions without further training.
+balanced_subset_cached_dev_roberta-base_512
+11/26/2022 01:32:58 - INFO - __main__ -   Creating features from dataset file at .
+100%|████████████████████████████████████████████████████████████████████████████████| 102/102 [01:06<00:00,  1.54it/s]
+convert squad examples to features: 100%|██████████████████████████████████████████| 4182/4182 [18:21<00:00,  3.80it/s]
+add example index and unique id: 100%|██████████████████████████████████████████| 4182/4182 [00:00<00:00, 58854.88it/s]
+11/26/2022 01:52:39 - INFO - __main__ -   Saving features into cached file cached_dev_roberta-base_512
+11/26/2022 01:55:43 - INFO - __main__ -   ***** Running evaluation  *****
+11/26/2022 01:55:43 - INFO - __main__ -     Num examples = 154627
+11/26/2022 01:55:43 - INFO - __main__ -     Batch size = 16
+Evaluating: 100%|██████████████████████████████████████████████████████████████████| 9665/9665 [26:25<00:00,  6.10it/s]
+11/26/2022 02:22:08 - INFO - __main__ -     Evaluation done in total 1585.137754 secs (0.010251 sec per example)
+11/26/2022 02:22:08 - INFO - utils -   Writing predictions to: ./train_models/roberta-base\predictions_.json
+11/26/2022 02:22:08 - INFO - utils -   Writing nbest to: ./train_models/roberta-base\nbest_predictions_.json
+11/26/2022 02:22:08 - INFO - utils -   Writing null_log_odds to: ./train_models/roberta-base\null_odds_.json
+OrderedDict([('exact', 71.59253945480631), ('f1', 75.15301001018659), ('total', 4182), ('HasAns_exact', 71.62379421221866), ('HasAns_f1', 83.5931574458202), ('HasAns_total', 1244), ('NoAns_exact', 71.57930565010211), ('NoAns_f1', 71.57930565010211), ('NoAns_total', 2938), ('best_exact', 71.85557149689144), ('best_exact_thresh', 0.0), ('best_f1', 75.13376376320464), ('best_f1_thresh', 0.0)])
