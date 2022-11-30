@@ -1,0 +1,1 @@
+{'name': 'roberta-base', 'aupr': 0.4275975347100747, 'prec_at_80_recall': 0.31390728476821195, 'prec_at_90_recall': 0}
