@@ -1,1 +1,1 @@
-{'name': 'bert-large-uncased', 'aupr': 0.28728846095875493, 'prec_at_80_recall': 0, 'prec_at_90_recall': 0}
+{'name': 'bert-large-uncased', 'aupr': 0.3774947096303307, 'prec_at_80_recall': 0.22434691745036572, 'prec_at_90_recall': 0}
